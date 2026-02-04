@@ -1,0 +1,38 @@
+# Multi-Object Tracking Configuration
+# This file documents the tunable parameters for the MOT system
+
+[Detection]
+# YOLO detection parameters
+confidence_threshold = 0.5      # Minimum confidence to accept detection (0.0-1.0)
+nms_threshold = 0.4             # Non-maximum suppression threshold (0.0-1.0)
+input_size = 416                # YOLO input size (320, 416, 608)
+
+[Tracking]
+# SORT tracker parameters
+max_iou_distance = 0.7          # Maximum IoU distance for matching (0.0-1.0)
+max_age = 30                    # Maximum frames to keep lost tracks
+min_hits = 3                    # Minimum hits before confirming track
+
+[Kalman Filter]
+# Process and measurement noise (in code)
+process_noise = 1e-2            # Process noise covariance
+measurement_noise = 1e-1        # Measurement noise covariance
+
+[Visualization]
+# Display settings
+show_trajectories = true        # Show object trajectories
+trajectory_length = 30          # Maximum trajectory points to display
+show_stats = true               # Show FPS and track count
+bounding_box_thickness = 2      # Thickness of bounding boxes
+
+[Performance]
+# Performance settings
+use_gpu = false                 # Use GPU for inference (requires CUDA build)
+skip_frames = 1                 # Process every Nth frame (1 = all frames)
+resize_factor = 1.0             # Resize video by factor (0.5 = half size)
+
+[Classes]
+# Object classes to track (COCO dataset)
+# 0: person, 1: bicycle, 2: car, 3: motorbike, 5: bus, 7: truck
+# Set to empty to track all classes
+track_classes = []              # Empty = track all, or [0, 2, 5, 7] for specific
