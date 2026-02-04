@@ -39,3 +39,38 @@
 
 # debug information files
 *.dwo
+
+# Build artifacts
+build/
+*.o
+*.a
+*.so
+mot_tracker
+
+# Model files
+models/*.weights
+models/*.onnx
+models/*.pt
+
+# Data files
+assets/*.mp4
+assets/*.avi
+assets/*.mov
+
+# Output files
+output/
+results/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+
+# Temp files
+*.tmp
+*.bak
+*.log
